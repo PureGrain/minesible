@@ -11,11 +11,21 @@
     - name: This command will remove the X Window and Gnome
       shell:
       cmd: sudo yum groupremove 'X Window System' 'GNOME' 'gnome-classic-session' 'gnome-terminal' 'nautilus-open-terminal' 'control-center liberation-mono-fonts'
-#sudo yum groupremove "GNOME Desktop"
-#sudo yum groupremove -y "MATE Desktop"
+    - name: This command will remove Gnome
+      shell:
+      cmd: sudo yum groupremove "GNOME Desktop"
+    - name: This command will remove the X Window and Gnome
+      shell:
+      cmd: sudo yum groupremove -y "MATE Desktop"
 ##few additional commands for lingering components:
-#sudo yum remove xorg* -y
-#sudo yum remove gnome* -y
-#sudo yum autoremove -y
+    - name: This command will remove xorg
+      shell:
+      cmd: sudo yum remove xorg* -y
+    - name: This command will remove all Gnome
+      shell:
+      cmd: sudo yum remove gnome* -y
+    - name: This command will run autoremove
+      shell:
+      cmd: sudo yum autoremove -y
 
         
