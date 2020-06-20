@@ -1,6 +1,5 @@
 - name: Yum Update All
   hosts: all
-  become: yes
   tasks:
   
     - name: upgrade all packages, excluding kernel & foo related packages
