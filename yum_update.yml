@@ -3,7 +3,7 @@
   tasks:
   
     - name: upgrade all packages, excluding kernel & foo related packages
-        yum:
-          name: '*'
-          state: latest
-          exclude: kernel*,foo*
+      yum:
+         name: '*'
+         state: latest
+         exclude: kernel*,foo*
