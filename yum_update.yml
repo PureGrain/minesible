@@ -26,5 +26,8 @@
     - name: This command will run autoremove
       shell:
         cmd: sudo yum autoremove -y
+    
+    - name: Rebooting after removing the dewsktops
+      reboot:
 
         
