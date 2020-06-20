@@ -8,8 +8,14 @@
          name: '*'
          state: latest
          exclude: kernel*,foo*
-    - name: Remove the 'Gnome desktop' environment group
-      yum:
-        name: "@^gnome-desktop-environment"
-        state: present
+    - name: This command will remove the X Window and Gnome
+      shell:
+      cmd: sudo yum groupremove 'X Window System' 'GNOME' 'gnome-classic-session' 'gnome-terminal' 'nautilus-open-terminal' 'control-center liberation-mono-fonts'
+#sudo yum groupremove "GNOME Desktop"
+#sudo yum groupremove -y "MATE Desktop"
+##few additional commands for lingering components:
+#sudo yum remove xorg* -y
+#sudo yum remove gnome* -y
+#sudo yum autoremove -y
+
         
