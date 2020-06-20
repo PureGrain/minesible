@@ -1,33 +1,12 @@
+## File: yum_update.yml
+## By: Challon Holt 06/20/20
+## Purpose: Update all systems
 - name: Yum Update All
   hosts: all
   become_user:
   tasks:
-    - name: This command will remove the X Window and Gnome
-      shell:
-        cmd: sudo yum groupremove 'X Window System' 'GNOME' 'gnome-classic-session' 'gnome-terminal' 'nautilus-open-terminal' 'control-center liberation-mono-fonts'
-    
-    - name: This command will remove Gnome
-      shell:
-        cmd: sudo yum groupremove "GNOME Desktop"
-    
-    - name: This command will remove the X Window and Gnome
-      shell:
-        cmd: sudo yum groupremove -y "MATE Desktop"
-##few additional commands for lingering components:
-    
-    - name: This command will remove xorg
-      shell:
-        cmd: sudo yum remove xorg* -y
-    
-    - name: This command will remove all Gnome
-      shell:
-        cmd: sudo yum remove gnome* -y
-    
-    - name: This command will run autoremove
-      shell:
-        cmd: sudo yum autoremove -y
-    
-    - name: Rebooting after removing the dewsktops
-      reboot:
-
-        
+    - name: upgrade all packages, excluding kernel & foo related packages
+      yum:
+        name: '*'
+        state: latest
+        exclude: kernel*,foo*
