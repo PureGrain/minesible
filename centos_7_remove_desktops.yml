@@ -13,17 +13,16 @@
     - name: This command will remove the MATE Desktop Group
       shell:
         cmd: sudo yum groupremove -y "MATE Desktop"
-##few additional commands for lingering components:
     
-    - name: This command will run: sudo yum remove xorg* -y
+    - name: This command will remove xorg
       shell:
         cmd: sudo yum remove xorg* -y
     
-    - name: This command will run: sudo yum remove gnome* -y
+    - name: This command will remove gnome
       shell:
         cmd: sudo yum remove gnome* -y
     
-    - name: This command will run: sudo yum autoremove -y
+    - name: This command will run autoremove
       shell:
         cmd: sudo yum autoremove -y
     
