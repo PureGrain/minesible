@@ -11,5 +11,4 @@
         state: latest
         exclude: kernel*,foo*
       register: output
-    - debug:
-        msg: {{ output.stdout }}
+    - debug: msg="{{ output.stdout }}"
