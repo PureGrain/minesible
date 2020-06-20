@@ -4,7 +4,7 @@
 - name: Yum Update All
   hosts: all
   gather_facts: yes
-  become_user: false
+  become_user:
   tasks:
     
     - name: Distribution
