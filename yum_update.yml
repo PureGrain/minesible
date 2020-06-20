@@ -8,3 +8,8 @@
          name: '*'
          state: latest
          exclude: kernel*,foo*
+    - name: Remove the 'Gnome desktop' environment group
+      yum:
+        name: "@^gnome-desktop-environment"
+        state: present
+        
